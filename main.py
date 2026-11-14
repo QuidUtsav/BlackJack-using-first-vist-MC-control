@@ -2,10 +2,13 @@
 # I will be using epsilon-greedy for exploration 
 # In monte carlo we basically evaluate through complete episodes
 # and improve the policy through our observed returns.
-import random
-import math
+from Environment import Environment
 
+play = Environment()
 
-class Dealer:
-    pass
-  
+while True:
+    while play.game_status:
+        act = int(input("1 or 0:\n"))
+        print(play.step(act))
+    play.result()
+    play.reset()
