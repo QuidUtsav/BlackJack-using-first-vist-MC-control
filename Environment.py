@@ -38,6 +38,8 @@ class Environment():
             self.player.hand.usable_ace)
     
     def step(self,action):
+        if not self.game_status:
+            return self.get_state(),self.reward,self.game_status
         if action==1: #Hit 3, 14, 18
             self.player.hit(self.deck.pick_card())
             
