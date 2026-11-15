@@ -21,21 +21,25 @@
 # print(best,ran)
 
 
-# Q = {
-#     (15, 10, False): {
-#         0: 0.65,  # Stick
-#         1: 0.35   # Hit
-#     },
-#     (18, 6, True): {
-#         0: 0.72,
-#         1: 0.41
-#     }
-# }
-# print(Q[(15, 10, False)][0])
+Q = {
+    (15, 10, False): {
+        0: 0.65,  # Stick
+        1: 0.35   # Hit
+    },
+    (18, 6, True): {
+        0: 0.72,
+        1: 0.41
+    }
+}
+state,_=Q
+print(Q[state][0])
 
-li = [
-    ((15, 10, False), 1),
-    ((18, 10, False), 0)
-]
-for state,action in li:
-    print(state,action)
+# li = [
+#     ((15, 10, False), 1),
+#     ((18, 10, False), 0)
+# ]
+# for state,action in li:
+#     print(state,action)
+
+# a=((4,20,True),0)
+# print((4,20,True) in a)
