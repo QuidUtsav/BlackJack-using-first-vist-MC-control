@@ -22,4 +22,4 @@ for _ in range(1000):
     else:
             draw+=1;
     env.reset()
-print(f"Wins={win},\nlosses={loss}\ndraws={draw}")
+print(f"Wins={win},\nlosses={loss}\ndraws={draw}")#helo helo
