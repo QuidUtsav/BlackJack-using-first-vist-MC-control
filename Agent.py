@@ -30,7 +30,7 @@ class Agent:
     def choose_action(self,state_action):
         random_number = random.random()
         if random_number<self.epsilon_value:
-            choice =  random.choice(0,1)
+            choice =  random.choice([0,1])
             if choice:
                 action =1
             else:
@@ -39,7 +39,7 @@ class Agent:
             if self.Q_dictionary[state_action][0]>self.Q_dictionary[state_action][1]:
                 action=0
             elif self.Q_dictionary[state_action][0]==self.Q_dictionary[state_action][1]:
-                choice =  random.choice(0,1)
+                choice =  random.choice([0,1])
                 if choice:
                     action =1
                 else:
