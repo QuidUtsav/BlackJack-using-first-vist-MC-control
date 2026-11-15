@@ -1,7 +1,7 @@
 from Hand import Hand
 class Player():
     def __init__(self):
-        print("hello from player")
+        # print("hello from player")
         #making a hand object for player
         self.hand = Hand()
 

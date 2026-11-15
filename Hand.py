@@ -22,7 +22,6 @@ class Hand:
     def detect_bust(self):
         self.total_card_value = sum(self.cards)
         if self.total_card_value>21:
-            print("You go busted!!!")
             return True
         else:
             return False

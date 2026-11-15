@@ -3,14 +3,23 @@
 # In monte carlo we basically evaluate through complete episodes
 # and improve the policy through our observed returns.
 from Environment import Environment
-import random
+from Agent import Agent
+
 env = Environment()
-
-for episode in range(5):
-    state = env.reset()
-
+Agent = Agent()
+env.reset()
+win=0
+loss=0
+draw=0
+for _ in range(1000):
     while env.game_status:
-        action = random.choice([0, 1])
-        next_state, reward, done = env.step(action)
-
-    print(f"Episode {episode + 1}: Reward = {reward}")
+        action = Agent.choose_action()
+        observation, reward, game_status = env.step(action)
+    if reward==1:
+            win+=1;
+    elif reward==-1:
+            loss+=1;
+    else:
+            draw+=1;
+    env.reset()
+print(f"Wins={win},\nlosses={loss}\ndraws={draw}")

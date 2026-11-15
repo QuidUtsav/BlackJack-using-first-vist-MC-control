@@ -30,7 +30,7 @@ class Environment():
         for _ in range(2):
             self.player.hit(self.deck.pick_card())
             self.dealer.hit(self.deck.pick_card())
-            print(self.get_state())
+
         
     def get_state(self):
         return (self.player.hand.calculate_total(),
@@ -50,7 +50,7 @@ class Environment():
                 self.game_status=False
                 return self.get_state(),self.reward,self.game_status
             self.reward=self.calculate_reward()
-            print(self.get_state())
+            
         elif action==0: #Stick  4 8 14
             while self.dealer.should_hit():
                 self.dealer.hit(self.deck.pick_card())
@@ -61,7 +61,7 @@ class Environment():
                     self.player_win=True
                     self.reward=self.calculate_reward()
                     self.game_status=False
-                    break
+                    return self.get_state(),self.reward,self.game_status
                 
                     #Given that condition breached we end the game as the environment
             self.game_status= False

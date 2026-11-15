@@ -1,7 +1,7 @@
 from Hand import Hand
 class Dealer():
     def __init__(self):
-        print("hello from Dealer")
+        # print("hello from Dealer")
         self.hand=Hand()
 
     def hit(self,card):

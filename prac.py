@@ -1,2 +1,2 @@
-li = [1,2,4,6,9,1]
-print(1 in li)
+t = ((13, 10, False), -2, False)
+print(t[1])
