@@ -1,16 +1,23 @@
 import random
+import math
 class Agent:
     def __init__(self):
         self.Q_dictionary={}
         self.visit_count={}
         self.episode_history=[]
         self.epsilon_value=0.1
-    
+        
+        #DECAYING ATTRIBUTES
+        # self.epsilon_value = 1.0
+        # self.epsilon_min = 0.01
+        # self.decay_rate = 0.00001
+        
     #tracking only for adding new state to q value
     def track_state(self, state):
         
         if state not in self.Q_dictionary:
             self.Q_dictionary[state] = {0: 0, 1: 0}
+            
     #record matra garna lai
     def record_steps(self,state,action):
         self.episode_history.append((state,action))
@@ -69,9 +76,8 @@ class Agent:
             #Monte carlo control formula calculating Q(s,a) value
             self.Q_dictionary[state][action] = self.Q_dictionary[state][action]+(reward-self.Q_dictionary[state][action])/self.visit_count[(state,action)]
         
-        
-    # def choose_action(self):
-    #     return random.choice([0,1])
+    def choose_random_action(self):
+        return random.choice([0,1])
     
     def reset(self):
         self.episode_history=[]
@@ -79,3 +85,10 @@ class Agent:
     def evaluation_test(self):
         self.episode_history=[]
         self.epsilon_value=0
+
+#DECAYING EPSILON POLICY    
+    # def decay_epsilon(self, episode):
+    #     self.epsilon_value = (
+    #         self.epsilon_min
+    #         + (1.0 - self.epsilon_min) * math.exp(-self.decay_rate * episode)
+    #     )
