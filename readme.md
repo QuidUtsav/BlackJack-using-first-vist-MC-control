@@ -2,7 +2,7 @@
 
 A from-scratch implementation of a Blackjack environment and a tabular Reinforcement Learning agent using **First-Visit Monte Carlo Control**.
 
-This project was built to develop a practical understanding of Reinforcement Learning fundamentals, particularly state representation, action-value estimation, exploration vs. exploitation, and policy evaluation.
+This project was built to develop a practical understanding of Reinforcement Learning fundamentals, particularly state representation, action-value estimation, exploration vs. exploitation, and policy evaluation. A project built to gamble but unfortunately i couldn't produce winning percentage
 
 Rather than relying on an existing RL environment, I implemented the game mechanics and learning agent independently in Python.
 
